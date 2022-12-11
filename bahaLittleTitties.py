@@ -59,8 +59,8 @@ for i in range(int(image_tas)):
         check = checkImg(link)
 
         if (check):
-            if not os.path.exists("littleNipo"):
-                os.mkdir("littleNipo")  # 建立資料夾
+            if not os.path.exists("littleTitties"):
+                os.mkdir("littleTitties")  # 建立資料夾
 
             img = requests.get(link)  # 下載圖片
 
