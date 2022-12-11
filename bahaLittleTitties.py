@@ -70,3 +70,5 @@ for i in range(int(image_tas)):
             with open("littleTitties\\" + "Titty-" + str(titty_index+1) + ".jpg", "wb") as file:  # 開啟資料夾及命名圖片檔
                 file.write(img.content)  # 寫入圖片的二進位碼
             titty_index += 1
+
+print("圖片下載已結束，可去 littleTitties 檔案裡查看圖片")
