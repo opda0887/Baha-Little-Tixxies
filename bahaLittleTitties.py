@@ -1,6 +1,7 @@
 import requests
 import os
 from bs4 import BeautifulSoup
+# 原始網址：https://forum.gamer.com.tw/C.php?page=1&bsn=60076&snA=6429036&gothis=89069355#89069355
 
 
 def sendRequest(url):
