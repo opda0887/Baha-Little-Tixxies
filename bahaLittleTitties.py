@@ -38,7 +38,7 @@ headers = {
     'Cookie': '',  # 輸入你的cookie (根據：login_token.php)
 }
 
-image_tas = input("輸入你需要幾頁的份量(一頁可能又很多張)：")
+image_tas = input("輸入你需要幾頁的份量(一頁可能有很多張)：")
 titty_index = 0  # 計算第幾張圖片
 
 for i in range(int(image_tas)):
