@@ -1,7 +1,7 @@
 import requests
 import os
 from bs4 import BeautifulSoup
-# 原始網址：https://forum.gamer.com.tw/C.php?page=1&bsn=60076&snA=6429036&gothis=89069355#89069355
+# * 原始網址：https://forum.gamer.com.tw/C.php?page=1&bsn=60076&snA=6429036&gothis=89069355#89069355
 
 
 def sendRequest(url):
@@ -31,15 +31,19 @@ def checkImg(url):
 
     return True
 
+# ? 獲取使用這得Cookie
+userCookie = input("你的cookie：")
 
 # 設定 User-Agent
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36',
-    'Cookie': '',  # 輸入你的cookie (根據：login_token.php)
+    # 輸入你的cookie (根據：login_token.php)
+    'Cookie': userCookie,
 }
 
 image_tas = input("輸入你需要幾頁的份量(一頁可能有很多張)：")
 titty_index = 0  # 計算第幾張圖片
+checkFlase = 1
 
 for i in range(int(image_tas)):
 
@@ -51,6 +55,8 @@ for i in range(int(image_tas)):
         print("Page"+str(i+1)+f' 請求成功：{response.status_code}')
     else:
         print("Page"+str(i+1)+f' 請求失敗：{response.status_code}')
+        checkFlase = 0
+        break
 
     soup = BeautifulSoup(response.text, "lxml")
 
@@ -73,4 +79,7 @@ for i in range(int(image_tas)):
                 file.write(img.content)  # 寫入圖片的二進位碼
             titty_index += 1
 
-print("圖片下載已結束，可去 littleTitties 檔案裡查看圖片")
+if (checkFlase):
+    print("圖片下載已結束，可去 littleTitties 檔案裡查看圖片。")
+else:
+    print("過程出現錯誤，可能是輸入了過多的頁數。")

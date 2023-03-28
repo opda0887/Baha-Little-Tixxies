@@ -1,2 +1,4 @@
 *.vscode
 littleTitties/
+build/
+bahaLittleTitties.spec
